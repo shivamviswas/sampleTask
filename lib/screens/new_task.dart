@@ -2,7 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:sample_task/screens/search.dart';
 import 'package:sample_task/utils/app_assets.dart';
+import 'package:sample_task/utils/app_routes.dart';
 import 'package:sample_task/utils/size_config.dart';
 
 class NewTask extends StatefulWidget {
@@ -63,10 +65,15 @@ class _NewTaskState extends State<NewTask> {
             child: Container(
               height: SizeConfig.heightMultiplier * 5,
               child: TextField(
+                onTap: (){
+                  AppRoutes.gotoFullScreen(context, SearchResult());
+                },
+                readOnly: true,
                 decoration: InputDecoration(
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 1.0, horizontal: 6),
                   isDense: true,
+
                   fillColor: Colors.white,
                   filled: true,
                   suffixIcon: Icon(

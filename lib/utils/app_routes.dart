@@ -18,6 +18,13 @@ class AppRoutes {
 
   }
 
+  static void gotoFullScreen(context, page) {
+    Navigator.of(context)
+        .push(new MaterialPageRoute(builder: (context) => page,fullscreenDialog: true));
+    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+  }
+
+
   static void replace(context, page) {
     // Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => page));
     Navigator.of(context).pushReplacement( new CupertinoPageRoute<bool>(
